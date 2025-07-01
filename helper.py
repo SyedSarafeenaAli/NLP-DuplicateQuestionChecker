@@ -7,12 +7,7 @@ import numpy as np
 import nltk
 nltk.download('stopwords')
 
-
-from pathlib import Path
-import pickle
-
-BASE = Path(__file__).parent  # file's directory
-cv = pickle.load(open(BASE / 'cv.pkl', 'rb'))
+cv = pickle.load(open('cv.pkl', 'rb'))
 
 def test_common_words(q1,q2):
     w1 = set(map(lambda word: word.lower().strip(), q1.split(" ")))
